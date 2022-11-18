@@ -1,0 +1,238 @@
+body{
+    font-family: 'Space Grotesk', sans-serif;
+    background: hsl(0, 0%, 100%);
+    max-width: 1440px;
+}
+
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    overflow-x: hidden;
+  }
+  
+.left {
+    left: 0;
+   height: 100%;
+   overflow: hidden;
+   padding-top: 0;
+   right: 25%;
+   width: 25%;
+   position: absolute;
+   display: inline-block;
+}
+  
+.right {
+    margin-right: 0;
+    right: 0;
+    padding-top: 0;
+    left: 25%;
+    width: 100%
+}
+
+.right .details-container {
+    text-align: center;
+    align-items: center;
+    left: 66%;
+    width: fit-content;
+    position: absolute;
+    transform: translate(-100%, 50%);
+    /* align-items: center; */
+    text-align: left;
+    /* align-content: center; */
+}
+
+.right .details-container .details-form {
+    align-content: center;
+}
+
+.right .details-container .details-form label {
+    display: block;
+    font-weight: 500;
+}
+
+.right .details-container .details-form input {
+    height: 2rem;
+    border-radius: 10px;
+    border: solid 2px;
+    padding: 10px;
+    font-size: 1.3rem;
+    font-weight: 200;
+    border-color: hsl(270, 3%, 87%);
+}
+
+.right .details-container .details-form .card-name input,
+.right .details-container .details-form .card-number input {
+    width: 25rem;
+    margin: 8px;
+}
+
+.right .details-container .details-form .card-name,
+.right .details-container .details-form .card-number,
+.right .details-container .details-form .card-bottom,
+.right .details-container .details-form .buttons {
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
+.right .details-container .details-form .error-message {
+    color: hsl(0, 100%, 66%);
+    font-weight: 300;
+    margin-top: .2rem;
+    display: none;
+}
+.right .details-container .details-form .card-bottom {
+    height: 80px;
+    margin-bottom: 0px;
+    width: fit-content;
+    display: flex;
+}
+
+.right .details-container .details-form .card-bottom .card-expiry {
+    display: flex;
+    width: fit-content;
+    height: min-content;
+    left: 1%;
+    position: relative;
+}
+
+.right .details-container .details-form .card-bottom .card-expiry label {
+    display: block;
+    position: static;
+    margin-bottom: 8px;
+}
+
+.right .details-container .details-form .card-bottom .card-expiry input {
+    width: 3.2rem;
+    
+    display: inline-block;
+    
+}
+
+.right .details-container .details-form .card-bottom .card-expiry p,
+.right .details-container .details-form .card-bottom .cvc p {
+    display: inline-block;
+}
+
+.right .details-container .details-form .card-bottom .card-expiry,
+.right .details-container .details-form .card-bottom .cvc {
+    float: left;
+}
+
+.right .details-container .details-form .card-bottom .cvc {
+     position: absolute; 
+     left: 157px;
+}
+
+.right .details-container .details-form .card-bottom .cvc label {
+    display: block;
+    position: static;
+}
+
+.right .details-container .details-form .card-bottom .cvc input {
+    width: 15.5rem;
+    position: relative;
+    margin-top: .3rem;
+    display: inline-block;
+}
+
+.right .details-container .details-form .button-container {
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.right .details-container .details-form .button-container button {
+    width: 100%;
+    padding: 1rem;
+    background: hsl(278, 68%, 11%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.right .details-container .details-form .button-container button:hover {
+    color: hsl(278, 68%, 11%);
+    background: rgb(205, 205, 205);
+}
+
+.right .completed-container {
+    display: none;
+}
+
+.card-front {
+    position: absolute;
+    color:hsl(0, 0%, 100%);
+    background-image:url(../images/bg-card-front.png);
+    height: 245px;
+    width: 447px;
+    top: 22.5%;
+    left: 5%;
+    font-size: .7rem;
+}
+
+.card-front .card-details {
+    padding: 2rem;
+}
+
+.card-front .card-details .card-number-display {
+    margin-top: 3rem;
+    font-weight: 300;
+    word-spacing: 5px;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.card-front .card-details .card-number-display .num-container {
+    display: inline-block;
+}
+
+.card-front .card-details .card-name-display {
+    font-weight: 100;
+    width: 50%;
+    margin-top: 30px;
+    font-weight: 100;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.card-front .card-details .card-expiry-display {
+    position: absolute;
+    right: 2rem;
+    font-weight: 100;
+    display: inline-block;
+    width: fit-content;
+    margin-top: 30px;
+}
+
+.card-back {
+    color: hsl(0, 0%, 100%);
+    background-image: url(../images/bg-card-back.png);
+    height: 245px;
+    width: 447px;
+    top: 53%;
+    left: 15%;
+    display: flex;
+    position: absolute;
+}
+
+.card-back p#cvc-display {
+    position: absolute;
+    right: 12.5%;
+    top: 38%
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    padding: 0%;
+    text-align: center;
+    display: block;
+    width: 100%;
+}

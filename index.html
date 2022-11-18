@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="./style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+  
+  <title>Interactive Card Details</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+  <div class="split left">
+    <img src="./images/bg-main-desktop.png" alt="bg-image" class="bg-image">
+  </div>
+  <div class="split right">
+    <div class="details-container">
+      <form class="details-form" id="form">
+        <div class="card-name">
+          <label class="labels" id="card-name-label" for="card-name">CARDHOLDER NAME</label>
+          <input type="text" class="inputs" id="card-name" placeholder="e.g. Jane Appleseed" required>
+          <p class="error-message" id="card-name-error">Can't be blank</p>
+        </div>
+        <div class="card-number">
+          <label class="labels" id="card-number-label" for="card-number">CARD NUMBER</label>
+          <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" class="inputs" id="card-number" placeholder="e.g. 1234 5678 9123 0000" required>
+          <p class="error-message" id="card-number-error">Wrong format, numbers only</p>
+        </div>
+        <div class="card-bottom">
+          <div class="card-expiry">
+            <div class="card-expiry-month">
+              <label class="labels" id="card-expiry-month-label" for="card-expiry-month">EXP. DATE (MM/YY)</label>
+              <input type="tel" inputmode="numeric" autocomplete="cc-exp-month" pattern="[0-9\s]" maxlength="2" id="card-expiry-month" class="inputs" placeholder="MM" required>
+              <input type="tel" inputmode="numeric" autocomplete="cc-exp-year" pattern="[0-9\s]" maxlength="2" id="card-expiry-year" class="inputs" placeholder="YY" required>
+            </div>
+            <div class="cvc" id="cvc-id">
+              <label for="cvc" class="labels" id="cvc-label">CVC</label>
+              <input type="tel" class="inputs" id="card-cvc" inputmode="numeric" maxlength="3" placeholder="e.g. 123" required>
+              <p class="error-message" id="card-cvc-error">Can't be blank</p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="button-container">
+          <button type="submit" class="buttons" id="submit-details">CONFIRM</button>
+        </div>
+      </form>
+    </div>
+    <div class="completed-container">
+      Thank you!
+    We've added your card details
+    Continue
+  
+    </div>
+    
+  </div>
+  <div class="card-front">
+    <div class="card-details">
+      <svg class="svg" width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+      <div class="card-number-display">
+        <div class="num-container" id="num-container1">
+          0000 0000 0000 0000
+        </div>
+      </div>
+      <div class="card-name-display">
+        Jane Appleseed
+      </div>
+      <div class="card-expiry-display">
+        00/00
+      </div>
+    </div>
+  </div>
+  <div class="card-back">
+    <p id="cvc-display">000</p>
+  </div>
+ 
+
+  <!-- Completed state start -->
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Emmanuel Balderas</a>.
+  </div>
+  <script type="module" src="./scripts/app.js" async defer></script>
+  <script src="./node_modules/cleave.js/dist/cleave.min.js"></script>
+</body>
+</html>
