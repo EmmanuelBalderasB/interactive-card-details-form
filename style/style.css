@@ -36,13 +36,15 @@ body{
 .right .details-container {
     text-align: center;
     align-items: center;
-    left: 66%;
+    left: 30%;
+    top: 25%;
     width: fit-content;
-    position: absolute;
-    transform: translate(-100%, 50%);
+    position:absolute;
+    /* transform: translate(-175%, 50%); */
     /* align-items: center; */
     text-align: left;
     /* align-content: center; */
+    
 }
 
 .right .details-container .details-form {
@@ -62,6 +64,7 @@ body{
     font-size: 1.3rem;
     font-weight: 200;
     border-color: hsl(270, 3%, 87%);
+    outline: none;
 }
 
 .right .details-container .details-form .card-name input,
@@ -81,7 +84,8 @@ body{
 
 .right .details-container .details-form .error-message {
     color: hsl(0, 100%, 66%);
-    font-weight: 300;
+    font-weight: 400;
+    font-size: .75rem;
     margin-top: .2rem;
     display: none;
 }
@@ -124,8 +128,8 @@ body{
 }
 
 .right .details-container .details-form .card-bottom .cvc {
-     position: absolute; 
-     left: 157px;
+    position: absolute; 
+    left: 157px;
 }
 
 .right .details-container .details-form .card-bottom .cvc label {
@@ -138,6 +142,10 @@ body{
     position: relative;
     margin-top: .3rem;
     display: inline-block;
+}
+
+.right .details-container .details-form .card-bottom .card-expiry .cvc p#card-cvc-error {
+    display: none;
 }
 
 .right .details-container .details-form .button-container {
@@ -154,6 +162,7 @@ body{
     color: white;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .right .details-container .details-form .button-container button:hover {
@@ -163,6 +172,19 @@ body{
 
 .right .completed-container {
     display: none;
+    text-align: center;
+    position: relative;
+    left: 10%;
+}
+
+.right .completed-container .continue-container button {
+    width: 100%;
+    padding: 1rem;
+    background: hsl(278, 68%, 11%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .card-front {
@@ -172,8 +194,9 @@ body{
     height: 245px;
     width: 447px;
     top: 22.5%;
-    left: 5%;
+    left: 20%;
     font-size: .7rem;
+    display: inline-block;
 }
 
 .card-front .card-details {
@@ -186,6 +209,7 @@ body{
     word-spacing: 5px;
     font-size: 1.8rem;
     letter-spacing: 2px;
+    height: 80px;
 }
 
 .card-front .card-details .card-number-display .num-container {
@@ -195,11 +219,15 @@ body{
 .card-front .card-details .card-name-display {
     font-weight: 100;
     width: 50%;
-    margin-top: 30px;
+    margin-top: -20px;
     font-weight: 100;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 3px;
+}
+
+.card-front .card-details .card-name-display p {
+    display: inline-block;
 }
 
 .card-front .card-details .card-expiry-display {
@@ -208,7 +236,11 @@ body{
     font-weight: 100;
     display: inline-block;
     width: fit-content;
-    margin-top: 30px;
+    margin-top: -12px;
+}
+
+.card-front .card-details .card-expiry-display p {
+    display: inline-block;
 }
 
 .card-back {
@@ -217,12 +249,12 @@ body{
     height: 245px;
     width: 447px;
     top: 53%;
-    left: 15%;
-    display: flex;
+    left: 25%;
+    display: inline-block; 
     position: absolute;
 }
 
-.card-back p#cvc-display {
+.card-back p#card-cvc-display {
     position: absolute;
     right: 12.5%;
     top: 38%
@@ -236,3 +268,141 @@ body{
     display: block;
     width: 100%;
 }
+
+@media (max-width: 1300px) {
+    .card-front {
+        left: 0%;
+    }
+
+    .card-back {
+        left: 7.5%;
+    }
+}
+
+@media (max-width: 950px) {
+    .card-back {
+        left: 0%;
+    }
+    .right .details-container {
+        width: 350px;
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        margin: 0;
+    }
+    .split {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 0;
+        top: 0;
+        overflow-x: hidden;
+      }
+      
+    .left {
+       height: 33%;
+       overflow: hidden;
+       padding-top: 0;
+       width: 100%;
+       position: absolute;
+       display: inline-block;
+    }
+
+    .left img {
+        transform: rotate(90deg);
+        bottom: 250px;
+        left:208px;
+        position: relative;
+        display: inline-block;
+
+    }
+      
+    .right {
+        top: 33%;
+        width: 100%;
+        left: 0px;
+        margin-right: 0;
+        padding-top: 0;
+    }
+    .right .details-container {
+        width: fit-content;
+        top: 15%;
+        position: relative;
+        left: 20%;
+    }
+    .right .details-container .details-form {
+        width: fit-content;
+    }
+    .right .details-container .details-form .card-name input,
+    .right .details-container .details-form .card-number input {
+        width: fit-content;
+        margin: 8px;
+    }
+    .right .details-container .details-form .card-bottom .card-expiry .cvc input {
+        width: 105px;
+        bottom: 5px;
+    }
+    .right .details-container .details-form .button-container button {
+        width: 90%;
+        padding: .9rem;
+        left: 0px;
+    }
+    .card-back {
+        top: 0%;
+        left: 5%;
+        display: inline-block; 
+        z-index: 0;
+    }
+    .card-front {
+        position: relative;
+        top: 140px;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    .card-front {
+        position: absolute;
+        transform: scale(75%, 75%);
+    }
+    .card-back {
+        transform: scale(75%, 75%);
+    }
+}
+@media (max-width: 414px) {
+    html {
+        height: 825px;
+    }
+    body{
+        padding: 0;
+        height: 825px;
+        width: 414px;
+        overflow-y: hidden;
+    }
+
+    .right {
+        top: 33%;
+        height: 800px;
+        overflow-y: hidden;
+    }
+
+    .right .details-container {
+        top: 10%;
+        left: 17%;
+        height: fit-content;
+        overflow-y: hidden;
+    }
+    .card-details {
+        top: 10%;
+    }
+    .card-front {
+        position: absolute;
+        transform: scale(75%, 75%);
+    }
+    .card-back {
+        transform: scale(75%, 75%);
+    }
+}
+
