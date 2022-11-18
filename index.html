@@ -35,8 +35,8 @@
           <div class="card-expiry">
             <div class="card-expiry-month">
               <label class="labels" id="card-expiry-month-label" for="card-expiry-month">EXP. DATE (MM/YY)</label>
-              <input type="tel" inputmode="numeric" autocomplete="cc-exp-month" pattern="[0-9\s]" maxlength="2" id="card-expiry-month" class="inputs" placeholder="MM" required>
-              <input type="tel" inputmode="numeric" autocomplete="cc-exp-year" pattern="[0-9\s]" maxlength="2" id="card-expiry-year" class="inputs" placeholder="YY" required>
+              <input type="tel" inputmode="numeric" autocomplete="cc-exp-month" maxlength="2" id="card-expiry-month" class="inputs" placeholder="MM" required>
+              <input type="tel" inputmode="numeric" autocomplete="cc-exp-year"  maxlength="2" id="card-expiry-year" class="inputs" placeholder="YY" required>
             </div>
             <div class="cvc" id="cvc-id">
               <label for="cvc" class="labels" id="cvc-label">CVC</label>
@@ -50,12 +50,18 @@
           <button type="submit" class="buttons" id="submit-details">CONFIRM</button>
         </div>
       </form>
-    </div>
-    <div class="completed-container">
-      Thank you!
-    We've added your card details
-    Continue
-  
+      <div class="completed-container" id="completion-container">
+        <div class="checkmark-container">
+          <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg" id="checkmark"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+        </div>
+        <div class="text">
+          <h1 id="thanks">Thank you!</h1>
+          <p id="added">We've added your card details</p>
+        </div>
+        <div class="continue-container">
+          <button type="submit" class="buttons" id="continue">Continue</button>
+        </div>
+      </div>
     </div>
     
   </div>
@@ -64,19 +70,19 @@
       <svg class="svg" width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
       <div class="card-number-display">
         <div class="num-container" id="num-container1">
-          0000 0000 0000 0000
+          <p class="displays" id="card-number-display">0000 0000 0000 0000</p>
         </div>
       </div>
       <div class="card-name-display">
-        Jane Appleseed
+        <p class="displays" id="card-name-display">Jane Appleseed</p>
       </div>
       <div class="card-expiry-display">
-        00/00
+        <p class="displays" id="card-expiry-month-display">00</p>/<p id="card-expiry-year-display">00</p>
       </div>
     </div>
   </div>
   <div class="card-back">
-    <p id="cvc-display">000</p>
+    <p class="displays" id="card-cvc-display">000</p>
   </div>
  
 
